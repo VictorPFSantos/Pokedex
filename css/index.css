@@ -19,7 +19,14 @@ body {
     /* font-family: 'superhelio _small', sans-serif; */
     /* font-family: 'superhelio _extended_ultra', sans-serif; */
     font-family: 'superhelio _thin', sans-serif;
+}
 
+#pokedexWrapper {
+    margin-top: 10vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .infos {
