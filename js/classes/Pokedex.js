@@ -293,6 +293,11 @@ export class Pokedex {
             this.#scrollRightDisplay += this.#speedScrollRightDisplay;
             this.#rightDisplayInfos.style.top = this.#scrollRightDisplay + 'px';
         }
+
+        if (this.#scrollRightDisplay <= (this.#speedScrollRightDisplay * -1))
+            this.#rightDisplay.children[0].innerHTML = '<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i>';
+        else
+            this.#rightDisplay.children[0].innerHTML = '<i class="fa fa-chevron-down"></i>';
     }
 
     scrollDownRightDisplay = event => {
@@ -304,6 +309,11 @@ export class Pokedex {
             this.#scrollRightDisplay -= this.#speedScrollRightDisplay;
             this.#rightDisplayInfos.style.top = this.#scrollRightDisplay + 'px';
         }
+
+        if (this.#scrollRightDisplay >= ((endOfScroll - this.#speedScrollRightDisplay - 40)) * -1)
+            this.#rightDisplay.children[0].innerHTML = '<i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i>';
+        else
+            this.#rightDisplay.children[0].innerHTML = '<i class="fa fa-chevron-up"></i>';
 
         // console.log(`${this.#scrollRightDisplay} >= ${(endOfScroll - this.#speedScrollRightDisplay)}`);
     }

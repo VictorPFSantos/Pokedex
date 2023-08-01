@@ -385,6 +385,10 @@ body {
 
 .scrollSignal {
     opacity: 0.2;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 5px;
     right: 10px;
