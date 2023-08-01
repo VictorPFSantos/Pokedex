@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -19,7 +20,9 @@
                     <div class="led green"></div>
                 </div>
                 <div id="cristal">
-                    <div class="glass"></div>
+                    <div class="glass">
+                        <div id="shine"></div>
+                    </div>
                 </div>
                 <div class="display powerOff" id="leftDisplay">
                     <div id="pokemon"></div>
@@ -40,7 +43,18 @@
             <div class="cover" id="cover1"></div>
             <div class="cover" id="cover2">
                 <div class="elements">
-                    <div id="rightDisplay" class="display"></div>
+                    <div id="rightDisplay" class="display">
+                        <div class="scrollSignal">
+                            <i class="fa fa-chevron-down"></i>
+                        </div>
+                        <div class="displayLoading">
+                            <div class="scroll">
+                                <div class="center">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btnDisplayDirUp"><i class="fa fa-chevron-up"></i></button>
+                    <button id="btnDisplayDirDown"><i class="fa fa-chevron-down"></i></button>
                 </div>
             </div>
         </div>
