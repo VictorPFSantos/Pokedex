@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <audio id="pokemonSound"></audio>
+    <div id="pokedex">
+        <div id="part1">
+            <div class="elements">
+                <div id="leds">
+                    <div class="led red"></div>
+                    <div class="led yellow"></div>
+                    <div class="led green"></div>
+                </div>
+                <div id="cristal">
+                    <div class="glass"></div>
+                </div>
+                <div class="display powerOff" id="leftDisplay">
+                    <div id="pokemon"></div>
+                </div>
+                <button class="btn btnCircle" id="btnPower"></button>
+                <button class="btn btnCircle" id="btnEnter"></button>
+                <div id="directional">
+                    <div id="btns">
+                        <div class="btn btnVer up"></div>
+                        <div class="btn btnHor right"></div>
+                        <div class="btn btnVer down"></div>
+                        <div class="btn btnHor left"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="part2">
+            <div class="cover" id="cover1"></div>
+            <div class="cover" id="cover2">
+                <div class="elements">
+                    <div id="rightDisplay" class="display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

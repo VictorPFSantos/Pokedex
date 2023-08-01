@@ -1,0 +1,318 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14rem;
+    position: relative;
+    background-color: #555;
+}
+
+#pokedex {
+    width: 552px;
+    height: 501px;
+    /* background-color: blueviolet; */
+    position: relative;
+    perspective: 1000px;
+}
+
+#part1 {
+    width: 295px;
+    height: 501px;
+    background: transparent url('../img/pokedex1.png') no-repeat;
+    position: absolute;
+}
+
+#part2 {
+    width: 257px;
+    height: 501px;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform-origin: 100% 50%;
+    transition: transform var(--pokedexOpenSpeed);
+}
+
+.cover {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+#part2>#cover1 {
+    width: 258px;
+    height: 501px;
+    background: transparent url('../img/pokedexcover1.png') no-repeat;
+    top: 0;
+    left: 0;
+}
+
+#part2>#cover2 {
+    width: 258px;
+    height: 501px;
+    background: transparent url('../img/pokedexcover2.png') no-repeat;
+    transform: rotateY(180deg);
+    left: 0;
+}
+
+/* ANIMATION TO OPEN THE POKEDEX */
+/* #pokedex:hover #part2 { */
+.open-pokedex {
+    perspective: pre;
+    transform-origin: 100% 50%;
+    transform: translateX(38px) rotateY(180deg);
+    transition: transform var(--pokedexOpenSpeed);
+}
+
+.elements {
+    width: 100%;
+    height: 100%;
+    /* background-color: #5555; */
+    position: relative;
+}
+
+#leds {
+    width: 52px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 8px;
+    left: 78px;
+}
+
+.led {
+    width: 14px;
+    height: 14px;
+    background-color: red;
+    border-radius: 300px;
+}
+
+.red {
+    background-color: red;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+
+.red.on {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #e35555 0 0 9px, rgb(225, 46, 46) 0 0 6px 4px;
+}
+
+.yellow {
+    background-color: yellow;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #50531f 0 0 9px, rgb(249, 253, 1) 0 0 0 0;
+}
+
+.yellow.on {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 7px 1px, inset #838b0d 0 0 9px, rgb(249, 253, 1) 0 0 3px 1px;
+}
+
+.green {
+    background-color: greenyellow;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #819b01 0 -1px 9px, greenyellow 0 2px 12px;
+}
+
+.ledGrennOn {
+    -webkit-animation: blinkYellow 1s infinite;
+    -moz-animation: blinkYellow 1s infinite;
+    -ms-animation: blinkYellow 1s infinite;
+    -o-animation: blinkYellow 1s infinite;
+    animation: blinkYellow 1s infinite;
+}
+
+#cristal {
+    width: 48px;
+    height: 48px;
+    background-color: aqua;
+    border-radius: 300px;
+    position: absolute;
+    top: 24px;
+    left: 22px;
+}
+
+#cristal .glass {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 300px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #006 0 -1px 9px, #3F8CFF 0 0px 14px 5px;
+}
+
+#cristal .glass:after {
+    content: "";
+    width: 50px;
+    height: 155px;
+    background: #fff;
+    opacity: .6;
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: -75px;
+    transform: rotate(35deg);
+    animation: brilho 2.5s linear 0s infinite normal;
+}
+
+.display {
+    box-shadow: inset 0 0 3px 1px #555;
+    outline: 2px solid #555;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: 0;
+    transition: var(--displaySpeedTransition);
+}
+
+#rightDisplay {
+    width: 190px;
+    height: 64px;
+    background-color: greenyellow;
+    position: absolute;
+    top: 131px;
+    left: 34px;
+    border-radius: 3px;
+}
+
+#leftDisplay {
+    width: 169px;
+    height: 132px;
+    background-color: #000;
+    position: absolute;
+    top: 142px;
+    left: 52px;
+    border-radius: 4px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: end;
+}
+
+#pokemon {
+    width: 96px;
+    height: 96px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.powerOn {
+    opacity: 1;
+    transition: var(--displaySpeedTransition);
+}
+
+.btn:active {
+    filter: brightness(0.7);
+}
+
+.btnCircle {
+    border-radius: 300px;
+    background-color: #555;
+    position: absolute;
+}
+
+#btnPower {
+    width: 23px;
+    height: 23px;
+    top: 286px;
+    left: 67px;
+    background-color: #FF5053;
+}
+
+#btnEnter {
+    width: 33px;
+    height: 33px;
+    top: 329px;
+    left: 29px;
+    background-color: #544E4E;
+}
+
+#directional {
+    width: 73px;
+    height: 74px;
+    position: absolute;
+    top: 356px;
+    left: 170px;
+    /* outline: 1px solid #000; */
+}
+
+#btns {
+    position: relative;
+}
+
+.btnHor {
+    width: 27px;
+    height: 22px;
+    position: absolute;
+    opacity: 0.4;
+    background-color: #544E4E;
+}
+
+.btnVer {
+    width: 22px;
+    height: 27px;
+    position: absolute;
+    opacity: 0.4;
+    background-color: #544E4E;
+}
+
+.up {
+    top: 0;
+    left: 26px;
+    /* background-color: blue; */
+    border-radius: 5px 5px 0 0;
+}
+
+.left {
+    top: 26px;
+    left: 0;
+    /* background-color: red; */
+    border-radius: 5px 0 0 5px;
+}
+
+.down {
+    top: 48px;
+    left: 26px;
+    /* background-color: yellow; */
+    border-radius: 0 0 5px 5px;
+}
+
+.right {
+    top: 26px;
+    left: 46px;
+    /* background-color: green; */
+    border-radius: 5px 0 5px 0;
+}
+
+@keyframes brilho {
+    0% {
+        top: -50px;
+        left: -75px;
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    10% {
+        left: 320%;
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    100% {
+        left: 120%;
+        transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+
+@keyframes blinkYellow {
+    from {
+        background-color: greenyellow;
+    }
+
+    50% {
+        filter: brightness(0.6);
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0px 7px 1px, inset #808002 0 0px 9px, greenyellow 0 0px 0;
+    }
+
+    to {
+        background-color: greenyellow;
+    }
+}
+
+:root {
+    --pokedexOpenSpeed: 1s;
+    --displaySpeedTransition: 0.3s;
+}
